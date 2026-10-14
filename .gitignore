@@ -1,0 +1,12 @@
+# .NET build files
+**/bin/
+**/obj/
+
+# JetBrains Rider
+.idea/
+*.DotSettings.user
+
+# Visual Studio
+.vs/
+*.user
+*.suo
