@@ -5,8 +5,99 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1000" Width="800">
     <Grid>
+        <Grid Margin="20">
+            <StackPanel>
+                <TextBlock Text="Мои задачи"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Margin="0,0,0,15"/>
+
+                <TextBlock Text="Название задачи"/>
+                <TextBox x:Name="TitleTextBox"
+                         Height="30"
+                         Margin="0,5,0,10"/>
+
+                <TextBlock Text="Описание"/>
+                <TextBox x:Name="DescriptionTextBox"
+                         Height="60"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         Margin="0,5,0,10"/>
+
+                <TextBlock Text="Срок выполнения"/>
+                <DatePicker x:Name="DueDatePicker"
+                            Margin="0,5,0,10"/>
+
+                <TextBlock Text="Приоритет"/>
+                <ComboBox x:Name="PriorityComboBox"
+                          SelectedIndex="1"
+                          Margin="0,5,0,15">
+                    <ComboBoxItem Content="Низкий"/>
+                    <ComboBoxItem Content="Средний"/>
+                    <ComboBoxItem Content="Высокий"/>
+                </ComboBox>
+
+                <Button x:Name="AddTaskButton"
+                        Content="Добавить задачу"
+                        Click="AddTaskButton_Click"
+                        Height="35"
+                        Margin="0,0,0,15"/>
+                
+                <Button x:Name="DeleteTaskButton"
+                        Content="Удалить выбранную задачу"
+                        Click="DeleteTaskButton_Click"
+                        Height="35"
+                        Margin="0,0,0,15"/>
+                
+                <TextBlock Text="Новый статус задачи"/>
+
+                <ComboBox x:Name="StatusComboBox"
+                          SelectedIndex="0"
+                          Margin="0,5,0,10">
+                    <ComboBoxItem Content="Не начата"/>
+                    <ComboBoxItem Content="В процессе"/>
+                    <ComboBoxItem Content="Выполнена"/>
+                </ComboBox>
+
+                <Button Content="Изменить статус выбранной задачи"
+                        Click="ChangeStatusButton_Click"
+                        Height="35"
+                        Margin="0,0,0,15"/>
+
+                <TextBlock Text="Список задач"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Margin="0,0,0,5"/>
+
+                <ListBox x:Name="TasksListBox"
+                         SelectionChanged="TasksListBox_SelectionChanged"
+                         Height="150">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Title}"
+                                           FontWeight="Bold"
+                                           Margin="0,0,15,0"/>
+
+                                <TextBlock Text="{Binding Status}"
+                                           Foreground="Gray"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <TextBlock Text="Подробности задачи"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Margin="0,15,0,10"/>
+
+                <TextBlock x:Name="TaskDetailsTextBlock"
+                           Text="Выберите задачу из списка"
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,10"/>
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </Window>
