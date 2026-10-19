@@ -3,7 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:TodoList"
              StartupUri="MainWindow.xaml">
+    
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="AppBackgroundBrush" Color="#F3F5FB"/>
+        <SolidColorBrush x:Key="SurfaceBrush" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="MainTextBrush" Color="#1C2644"/>
+        <SolidColorBrush x:Key="MutedTextBrush" Color="#718096"/>
+        <SolidColorBrush x:Key="AccentBrush" Color="#554DE7"/>
+        <SolidColorBrush x:Key="AccentSoftBrush" Color="#ECEBFF"/>
+        <SolidColorBrush x:Key="BorderColorBrush" Color="#E2E7F0"/>
+        <SolidColorBrush x:Key="FieldBrush" Color="#F8F9FD"/>
+        <SolidColorBrush x:Key="SuccessBrush" Color="#179C77"/>
+        <SolidColorBrush x:Key="DangerBrush" Color="#DC4557"/>
     </Application.Resources>
 </Application>
